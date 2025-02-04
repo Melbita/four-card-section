@@ -114,6 +114,9 @@ section{
 @media (min-width: 600px){
 
   header{
+    max-width: 540px;
+    text-align: center;
+
     .header__pretitle{
       font-size: 2.4rem;
     }
