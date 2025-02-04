@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+
+  /* Colors */
+  --color-red: #EA5454;
+  --color-aqua: #44D3D2;  
+  --color-yellow: #FCAE4A;
+  --color-light-blue: #549EF2;
+  --color-gray: #4D4F62;
+
+  /* Spacing */
+
+  --spacing-mini: 0.533rem; /* 8px */
+  --spacing-mid: 1.067rem;/* 16px */
+  --spacing-large: 1.6rem;/* 24px */
+  --spacing-big: 2.133rem; /* 32px */
+  --spacing-ultra: 3.2rem; /* 48px */
+
+}
+
+html,body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: "Poppins";
+  color: var(--color-gray);
+}
+
+h1,h2,h3,p{
+  margin: 0;
+  padding: 0;
+}
+
+main{
+  height: 100%;
+  margin: var(--spacing-ultra) var(--spacing-big);
+  display: grid;
+}
+
+header{
+  margin-bottom: var(--spacing-large);
+  padding: 0 var(--spacing-mini);
+
+  .header__pretitle{
+    font-size: var(--spacing-large);
+    font-weight: 200;
+    letter-spacing: 0.17px;
+  }
+  
+  .header__title{
+    font-size: var(--spacing-large);
+    font-weight: 600;    
+    letter-spacing: 0.17px;
+  }
+
+  .header__description{
+    line-height: 25px;
+    letter-spacing: 0.1px;
+    opacity: .5;
+    filter: drop-shadow(2px 2px 5px);
+  }
+}
+
+section{
+  margin-top: var(--spacing-large);   
+  display: grid;
+  gap: var(--spacing-large);
+
+  .card{
+    border-radius: 4px;
+    padding: var(--spacing-big);
+    box-shadow: -1px 9px 20px var(--color-gray);
+    display: grid;
+    grid-template-rows: auto auto 2fr;
+    gap: var(--spacing-mini);
+    min-height: 222px;
+
+    &.card--lightblue{
+      border-top: var(--color-light-blue) 4px solid;
+    }
+
+    &.card--red{
+      border-top: var(--color-red) 4px solid;
+    }
+
+    &.card--yellow{
+      border-top: var(--color-yellow) 4px solid;     
+    }
+
+    &.card--aqua{
+      border-top: var(--color-aqua) 4px solid;        
+    }
+
+    .card__image{
+      justify-self: flex-end;
+      align-self: flex-end;
+    }
+
+    .card__title{
+      font-size: 1.333rem;
+      font-weight: 600;
+    }
+
+    .card__description{
+      font-size: .867rem;
+      line-height: 23px;
+      letter-spacing: 0.09px;
+    }
+  }
+}
+
+@media (min-width: 600px){
+
+  header{
+    .header__pretitle{
+      font-size: 2.4rem;
+    }
+    
+    .header__title{
+      font-size: 2.4rem;
+    }
+  
+    .header__description{
+      line-height: 25px;
+      letter-spacing: 0.1px;
+      opacity: .5;
+      filter: drop-shadow(2px 2px 5px);
+    }
+  }
+
+  main{
+    place-items: center;
+  }
+
+  section{
+    grid-template-columns: repeat(3, minmax(150px, 350px));
+
+    .card{
+      max-height: 250px;
+
+      &.card--lightblue{
+        align-self: center;
+      }
+
+      &.card--aqua{
+        align-self: center;
+      }
+    }
+
+    .column{
+      display: grid;
+      gap: var(--spacing-mid);
+    }
+  }
+}
